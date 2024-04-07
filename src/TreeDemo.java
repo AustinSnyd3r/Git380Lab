@@ -172,13 +172,14 @@ class BinarySearchTree{
 
       return curr.value;
    }
-   
-   
-   
-   /*
-   this method will not compile until getMax
-   is implemented
-   */
+
+
+   /**
+    * A function to delete a node with specified value from a bst.
+    * @param root The root of the tree that will have a node deleted. Type: Node
+    * @param key  The value that will be deleted from the tree. Type: int
+    * @return
+    */
    public Node delete(Node root, int key){
       
       if(root == null){
