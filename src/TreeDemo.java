@@ -34,14 +34,23 @@ class BinarySearchTree{
       
       return root;
    }
-   
-   
-   
-   /*
-   pre-order traversal
-   */
+
+
+   /**
+    * Function to print the pre order traversal of a binary search tree
+    * @param root
+    */
    public void preOrderTraversal(Node root){
-      //implement me
+      //if the root isnt null we go recursively L R then Node
+      if(root != null){
+         //Print the node
+         System.out.println(root.value + ", ");
+         //recurse left
+         postOrderTraversal(root.left);
+         //recurse right
+         postOrderTraversal(root.right);
+      }
+      //Returns here back down callstack to go down different paths of tree
    }
 
 
