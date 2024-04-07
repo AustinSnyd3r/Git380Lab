@@ -82,15 +82,30 @@ class BinarySearchTree{
    public int getMin(Node root){
       //implement me
    }
-  
-  
-  
-   /*
-   a method to find the node in the tree
-   with a largest key
-   */
+
+
+   /**
+    * A method for finding the greatest value in the bst
+    * @param root This is the root node of the tree that will be searched.
+    * @return Returns the max node value of the tree as an int.
+    */
    public int getMax(Node root){
-	  //implement me
+      //base case
+      if(root == null){
+         return Integer.MIN_VALUE;
+      }
+
+      //initialize a curr node
+      Node curr = root;
+
+      //push the current node "pointer" all the way to right side of tree
+      //this will have the greatest value
+      while(curr.right != null){
+         //shift curr
+         curr = curr.right;
+      }
+
+      return curr.value;
    }
    
    
