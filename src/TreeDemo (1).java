@@ -61,16 +61,32 @@ class BinarySearchTree{
    public void postOrderTraversal(Node root){
       //implement me
    }
-   
-   
-   
-   /*
-   a method to find the node in the tree
-   with a specific value
-   */
+
+
+   /**
+    * A function that checks if a key is included in a binary search tree.
+    * @param root This is the root of the tree that the search starts from. Type: Node
+    * @param key  This is an integer value that is searched for in the tree.
+    * @return Returns true if key is found in the tree, false if not found.
+    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+      //base case: reached a null pointer
+      if(root == null){
+         return false;
+      }
+
+      //base case: found the key
+	  if(root.value == key){
+         return true;
+      }
+
+      //if the key is bigger we can decide to go to the right side.
+      if(key > root.value){
+         return find(root.right, key);
+      }
+
+      //recursive call to the left
+      return find(root.left, key);
    }
 
 
