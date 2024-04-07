@@ -52,14 +52,24 @@ class BinarySearchTree{
    public void inOrderTraversal(Node root){
       //implement me
    }
-   
-   
-   
-   /*
-   post-order traversal
-   */
+
+
+   /**
+    * Function that goes through a bst in post-order: LRN
+    * @param root The Node root of the bst.
+    */
    public void postOrderTraversal(Node root){
-      //implement me
+
+      //if the root isnt null we go recursively L R then Node
+      if(root != null){
+         //recurse left
+         postOrderTraversal(root.left);
+         //recurse right
+         postOrderTraversal(root.right);
+         System.out.println(root.value + ", ");
+      }
+
+      //Returns here back down callstack to go down different paths of tree
    }
 
 
