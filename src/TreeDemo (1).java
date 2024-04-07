@@ -44,13 +44,25 @@ class BinarySearchTree{
       //implement me
    }
 
-   
-   
-   /*
-   in-order traversal
-   */
+
+   /**
+    * Function that prints out the inOrder of the bst
+    * @param root Node that is the root of bst
+    */
    public void inOrderTraversal(Node root){
-      //implement me
+      //if the root isnt null we go recursively L R then Node
+      if(root != null){
+         //recurse left
+         postOrderTraversal(root.left);
+
+         //print the node
+         System.out.println(root.value + ", ");
+
+         //recurse right
+         postOrderTraversal(root.right);
+      }
+
+      //Returns here back down callstack to go down different paths of tree
    }
 
 
