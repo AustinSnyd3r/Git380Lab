@@ -13,11 +13,14 @@ class Node{
 class BinarySearchTree{
 
    Node root;
-   
-   
-   /*
-   recursive insert method
-   */
+
+
+   /**
+    * A method to insert a node into a bst.
+    * @param root The root of the tree that the new value will be inserted into. Type: Node
+    * @param value Integer that represents the node value that will be inserted. Type: int
+    * @return  Returns the root of the binary search tree. Type: Node
+    */
    public Node insert(Node root, int value){
       //base case
       if(root == null){
@@ -213,12 +216,13 @@ class BinarySearchTree{
 public class TreeDemo{
    public static void main(String[] args){
       BinarySearchTree t1  = new BinarySearchTree();
-      t1.insert(24);
-      t1.insert(80);
-      t1.insert(18);
-      t1.insert(9);
-      t1.insert(90);
-      t1.insert(22);
+      Node root = t1.root;
+      t1.insert(root,24);
+      t1.insert(root,80);
+      t1.insert(root,18);
+      t1.insert(root,9);
+      t1.insert(root,90);
+      t1.insert(root,22);
             
       System.out.print("in-order :   ");
       t1.inOrderTraversal(t1.root);
