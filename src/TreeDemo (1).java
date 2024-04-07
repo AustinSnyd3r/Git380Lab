@@ -72,15 +72,30 @@ class BinarySearchTree{
 	  //implement me
       return false;           
    }
-   
-   
-   
-   /*
-   a method to find the node in the tree
-   with a smallest key
-   */
+
+
+   /**
+    * Function to find the smallest value within a binary search tree.
+    * @param root The root of the tree that will be searched. Type: Node
+    * @return  The smallest int value in the tree.
+    */
    public int getMin(Node root){
-      //implement me
+      //base case
+      if(root == null){
+         return Integer.MAX_VALUE;
+      }
+
+      //initialize a curr node
+      Node curr = root;
+
+      //push the current node "pointer" all the way to left
+      //this will have the smallest value
+      while(curr.left != null){
+         //shift curr left
+         curr = curr.left;
+      }
+
+      return curr.value;
    }
 
 
